@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Regression Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+    <div class="container">
+        <form action="/predict" method="POST"><br><br>
+            <label for="area">Area (sq ft):</label>
+            <input type="text" id="area" name="area" required><br>
+            <label for="rooms">Number of Rooms:</label>
+            <input type="text" id="rooms" name="rooms" required><br><br>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+    
+    <div class="pred">
+        <div class="inside">
+            {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+            {% endif %}
+        </div>
+        
+    </div>
+    
+</body>
+</html>
